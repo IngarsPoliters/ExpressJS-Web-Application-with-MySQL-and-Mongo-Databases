@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h1>Add Head Of State</h1>
+
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=>{ %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+
+
+            <form action="/addHeads" method="POST">
+                <label>Country Code</label>
+                <input type="text" name="_id" value="<%=_id %>"><br>
+                <label>Head of State</label>
+                <input type="text" name="headOfState" value="<%= headOfState %>"><br>
+                <input type="submit" value="Add">
+
+                <br><br>
+            </form>
+
+            <a href="/">Home</a>
+</body>

@@ -1,0 +1,32 @@
+<style
+>table, th, td {
+    border: 1px solid black;
+  }
+  </style>
+
+<body>
+    <h1>Countries</h1>
+<form action="/addCountry" >
+    <input method="POST" type="submit" value="Add Country"><br>
+</form>
+    <table>
+        <tr>
+            <th>Country Code</th>
+            <th>Country Name</th>
+            <th>Country Details</th>
+            <th colspan="2">Action</th>
+        </tr>
+        <% countries.forEach((country) => { %>
+            
+            <tr>
+                <td><%= country.co_code %></td>
+                <td name="co_name"><%= country.co_name %></td>
+                <td><%= country.co_details %></td>
+                <td><a href="/editCountry/<%= country.co_code %>">Update</a></td>
+                <td><a href="/delete/<%= country.co_code %>">Delete</a></td>
+            </tr>
+            <% }) %>
+    </table>
+    <a href="/">Home</a>
+</body>
+

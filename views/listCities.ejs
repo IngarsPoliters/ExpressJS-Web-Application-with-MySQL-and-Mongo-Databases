@@ -1,0 +1,41 @@
+<style
+>table, th, td {
+    border: 1px solid black;
+  }
+  </style>
+<body>
+    <h1>Cities</h1>
+
+    <form action="/addCity" >
+        <input action="/addCity" method="POST" type="submit" value="Add City"><br>
+    </form>
+
+    <table>
+        <tr>
+            <th>City Code</th>
+            <th>Country Code</th>
+            <th>City Name</th>
+            <th>Population</th>
+            <th>By the Sea</th>
+            <th>Area</th>
+            <th colspan="2">Action</th>
+            
+        </tr>
+        <% cities.forEach((city) => { %>
+            <tr>
+                <td><%= city.cty_code %></td>
+                <td><%= city.co_code %></td>
+                <td><%= city.cty_name %></td>
+                <td><%= city.population %></td>
+                <td><%= city.isCoastal %></td>
+                <td><%= city.areaKM %></td>
+                <td><a href="/allDetails/<%= city.cty_code %>">All Details</a></td>
+                <td><a href="/deleteCity/<%= city.cty_code %>">Delete</a></td>
+            </tr>
+            <% }) %>
+            
+    </table>
+    <a href="/">Home</a>
+
+
+</body>

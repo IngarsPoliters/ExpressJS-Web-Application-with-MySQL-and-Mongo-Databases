@@ -1,0 +1,24 @@
+<body>
+    <h1>Add Country</h1>
+
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=>{ %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+
+            <form action="/addCountry" method="POST">
+                <label>Country Code</label>
+                <input type="text" name="co_code" value="<%= co_code %>"><br>
+                <label>Country Name</label>
+                <input type="text" name="co_name" value="<%= co_name %>"><br>
+                <label>Country Details</label>
+                <textarea type="text" name="co_details" value="<%= co_details %>"></textarea>
+                <input type="submit" value="Add">
+            </form>
+            <a href="/">Home</a>
+</body>

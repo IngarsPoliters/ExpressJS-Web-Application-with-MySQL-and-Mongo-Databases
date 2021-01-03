@@ -1,0 +1,35 @@
+<body>
+    <h1>Add City Details</h1>
+
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=>{ %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+
+    <form action="/addCity" method="POST">
+        <label>City Code</label>
+        <input type="text" name="cty_code" value="<%= cty_code %>" ><br>
+        <label>Country Code</label>
+        <input type="text" name="co_code" value="<%= co_code %>"><br>
+        <label>City Name</label>
+        <input type="text" name="cty_name" value="<%= cty_name %>" ><br>
+        <label>City Population</label>
+        <input type="number" name="population" value="<%= population %>"></input><br>
+        <label>By the Sea</label>
+        <input type="text" name="isCoastal" value="<%= isCoastal %>"><br>
+        <label>Area (KM)</label>
+        <input type="number" name="areaKM" value="<%= areaKM %>">
+        <input type="submit" value="Add">
+    </form>
+    <a href="/">Home</a>
+
+
+
+
+
+</body>
